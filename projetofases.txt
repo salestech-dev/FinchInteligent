@@ -1,0 +1,171 @@
+✅ PASSO 1 — Criar o esqueleto do backend (PRIORIDADE)
+
+Antes de pensar em tela, gráfico ou PDF.
+
+Faça agora:
+
+Criar um projeto ASP.NET Core Web API
+
+Subir no GitHub (repo público)
+
+Commit inicial organizado
+
+👉 Isso já vira post no LinkedIn se quiser.
+
+✅ PASSO 2 — Modelar o banco (o cérebro do sistema)
+
+Sem banco bem pensado, tudo vira gambiarra.
+
+Você vai criar:
+
+Usuario
+
+Conta
+
+Categoria
+
+Transacao
+
+Orcamento
+
+Recorrencia
+
+📌 Aqui você decide o que o sistema pode ou não fazer.
+
+Esse passo já te coloca acima de dev iniciante.
+
+✅ PASSO 3 — Autenticação (sem login = projeto fraco)
+
+Faz isso cedo pra não sofrer depois.
+
+Cadastro
+
+Login
+
+JWT
+
+Usuário só vê os próprios dados
+
+Empresa exige isso. Simples assim.
+
+✅ PASSO 4 — CRUD de verdade (não copia/cola)
+
+Agora sim entra código pesado.
+
+Conta
+
+Categoria
+
+Transação
+
+Mas atenção:
+❌ nada de regra no controller
+✅ tudo no service
+
+✅ PASSO 5 — Regras de negócio (onde você brilha)
+
+Aqui você vira dev de sistema, não de formulário.
+
+Exemplos pra implementar:
+
+Calcular saldo automaticamente
+
+Impedir gasto maior que saldo (opcional)
+
+Detectar categoria que estourou orçamento
+
+Diferenciar gasto fixo e variável
+
+Fechar mês
+
+Isso dá assunto em entrevista.
+
+✅ PASSO 6 — Endpoint de resumo financeiro
+
+Antes do front, cria isso:
+
+Total de entradas
+
+Total de saídas
+
+Saldo
+
+Top categorias
+
+Comparativo mensal
+
+Esses endpoints alimentam tudo depois.
+
+✅ PASSO 7 — Front simples (funcional > bonito)
+
+Nada de overdesign.
+
+Login
+
+Dashboard
+
+Cadastro de gasto
+
+Lista com filtro por mês
+
+Se funcionar bem, tá ótimo.
+
+✅ PASSO 8 — Gráficos (Chart.js)
+
+Agora sim:
+
+Pizza por categoria
+
+Linha mensal
+
+Evolução do saldo
+
+Gráfico com propósito, não só bonito.
+
+✅ PASSO 9 — Insights automáticos
+
+Esse é o diferencial que você prometeu.
+
+Exemplos:
+
+“Você gastou 25% a mais em X”
+
+“Maior custo recorrente”
+
+“Alerta de risco financeiro”
+
+Lógica simples. Impacto grande.
+
+✅ PASSO 10 — PDF + acabamento final
+
+Pra fechar bonito:
+
+Relatório mensal em PDF
+
+Tratamento de erros
+
+Logs
+
+README atualizado
+
+Prints
+
+⚠️ Regra de ouro (grava isso)
+
+Um passo por vez
+
+Não pula etapa
+
+Commit pequeno
+
+Código limpo
+
+Projeto grande morre quando vira bagunça.
+
+🎯 O QUE EU FARIA NO SEU LUGAR AGORA
+
+Literalmente agora, nessa ordem:
+
+1️⃣ Criaria o projeto Web API
+2️⃣ Subiria no GitHub
+3️⃣ Começaria a modelagem das entidades
