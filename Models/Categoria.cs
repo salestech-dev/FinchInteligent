@@ -10,6 +10,8 @@ namespace finchInteligent.Models
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public TipoDeCategoria MyProperty { get; set; }
+        public TipoDeCategoria TipoDeCategoria { get; set; }
+        public int UsuarioId { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }
