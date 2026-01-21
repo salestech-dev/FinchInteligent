@@ -4,12 +4,12 @@ Antes de pensar em tela, gráfico ou PDF.
 
 Faça agora:
 
-Criar um projeto ASP.NET Core Web API
+Criar um projeto ASP.NET Core Web API ✅
 
-Subir no GitHub (repo público)
+Subir no GitHub (repo público) ✅
 
-Commit inicial organizado
-
+Commit inicial organizado ✅
+ 
 👉 Isso já vira post no LinkedIn se quiser.
 
 ✅ PASSO 2 — Modelar o banco (o cérebro do sistema)
@@ -18,11 +18,11 @@ Sem banco bem pensado, tudo vira gambiarra.
 
 Você vai criar:
 
-Usuario
+Usuario ✅
 
-Conta
+Conta ✅
 
-Categoria
+Categoria ✅
 
 Transacao
 
