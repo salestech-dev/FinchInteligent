@@ -1,6 +1,16 @@
+using finchInteligent.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 26))
+    ));
+
+
+    
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
