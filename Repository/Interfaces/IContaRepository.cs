@@ -11,12 +11,13 @@ namespace finchInteligent.Repository.Interfaces
     {
         Task<Conta> CreateAsync(Conta conta);
 
-        Task<Conta?> GetByIdAsync(int id, int usuarioId);
+        Task<Conta?> GetByIdAsync(int id, string usuarioId);
 
-        Task<IEnumerable<Conta>> GetAllByUsuarioAsync(int usuarioId);
+        Task<IEnumerable<Conta>> GetAllByUsuarioAsync(string usuarioId);
 
         Task UpdateAsync(Conta conta);
 
-        Task<bool> DeleteAsync(int id, int usuarioId);
+        Task<bool> DeleteAsync(int id, string usuarioId);
+        Task<Conta?> GetByIdAndUsuarioAsync(int contaId, string usuarioId);
     }
 }

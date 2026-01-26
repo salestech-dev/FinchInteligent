@@ -25,7 +25,7 @@ namespace finchInteligent.Repository.Implementations
             int categoriaId,
             int mes,
             int ano,
-            int usuarioId)
+            string usuarioId)
         {
             return await _context.Orcamentos
                 .FirstOrDefaultAsync(o =>
@@ -37,7 +37,7 @@ namespace finchInteligent.Repository.Implementations
         }
 
         public async Task<IEnumerable<Orcamento>> GetByUsuarioMesAnoAsync(
-            int usuarioId,
+            string usuarioId,
             int mes,
             int ano)
         {
@@ -56,7 +56,7 @@ namespace finchInteligent.Repository.Implementations
             await _context.SaveChangesAsync();
         }
 
-        public async Task<bool> DeleteAsync(int id, int usuarioId)
+        public async Task<bool> DeleteAsync(int id, string usuarioId)
         {
             var orcamento = await _context.Orcamentos
                 .FirstOrDefaultAsync(o => o.Id == id && o.UsuarioId == usuarioId);
@@ -66,6 +66,16 @@ namespace finchInteligent.Repository.Implementations
             _context.Orcamentos.Remove(orcamento);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public Task<bool> ExistsAsync(int categoriaId, int mes, int ano, string usuarioId)
+        {
+            return _context.Orcamentos.AnyAsync(o =>
+                o.CategoriaId == categoriaId &&
+                o.Mes == mes &&
+                o.Ano == ano &&
+                o.UsuarioId == usuarioId
+            );
         }
     }
 }

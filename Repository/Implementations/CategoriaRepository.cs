@@ -20,20 +20,20 @@ public class CategoriaRepository : ICategoriaRepository
         return categoria;
     }
 
-    public async Task<Categoria?> GetByIdAsync(int id, int usuarioId)
+    public async Task<Categoria?> GetByIdAsync(int id, string usuarioId)
     {
         return await _context.Categorias
             .FirstOrDefaultAsync(c => c.Id == id && c.UsuarioId == usuarioId);
     }
 
-    public async Task<IEnumerable<Categoria>> GetAllByUsuarioAsync(int usuarioId)
+    public async Task<IEnumerable<Categoria>> GetAllByUsuarioAsync(string usuarioId)
     {
         return await _context.Categorias
             .Where(c => c.UsuarioId == usuarioId)
             .ToListAsync();
     }
 
-    public async Task<IEnumerable<Categoria>> GetByTipoAsync(TipoDeCategoria tipo, int usuarioId)
+    public async Task<IEnumerable<Categoria>> GetByTipoAsync(TipoDeCategoria tipo, string usuarioId)
     {
         return await _context.Categorias
             .Where(c => c.TipoDeCategoria == tipo && c.UsuarioId == usuarioId)
@@ -46,7 +46,7 @@ public class CategoriaRepository : ICategoriaRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task<bool> DeleteAsync(int id, int usuarioId)
+    public async Task<bool> DeleteAsync(int id, string usuarioId)
     {
         var categoria = await GetByIdAsync(id, usuarioId);
         if (categoria == null) return false;
@@ -56,7 +56,7 @@ public class CategoriaRepository : ICategoriaRepository
         return true;
     }
 
-    public Task<bool> ExistsAsync(string nome, TipoDeCategoria tipo, int usuarioId)
+    public Task<bool> ExistsAsync(string nome, TipoDeCategoria tipo, string usuarioId)
 {
     return _context.Categorias.AnyAsync(c =>
         c.Nome == nome &&
@@ -64,4 +64,10 @@ public class CategoriaRepository : ICategoriaRepository
         c.UsuarioId == usuarioId
     );
 }
+
+    public Task<Categoria?> GetByIdAndUsuarioAsync(int categoriaId, string usuarioId)
+    {
+        return _context.Categorias
+            .FirstOrDefaultAsync(c => c.Id == categoriaId && c.UsuarioId == usuarioId);
+    }
 }

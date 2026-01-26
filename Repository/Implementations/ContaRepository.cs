@@ -19,13 +19,13 @@ public class ContaRepository : IContaRepository
         return conta;
     }
 
-    public async Task<Conta?> GetByIdAsync(int id, int usuarioId)
+    public async Task<Conta?> GetByIdAsync(int id, string usuarioId)
     {
         return await _context.Contas
             .FirstOrDefaultAsync(c => c.Id == id && c.UsuarioId == usuarioId);
     }
 
-    public async Task<IEnumerable<Conta>> GetAllByUsuarioAsync(int usuarioId)
+    public async Task<IEnumerable<Conta>> GetAllByUsuarioAsync(string usuarioId)
     {
         return await _context.Contas
             .Where(c => c.UsuarioId == usuarioId)
@@ -38,7 +38,7 @@ public class ContaRepository : IContaRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task<bool> DeleteAsync(int id, int usuarioId)
+    public async Task<bool> DeleteAsync(int id, string usuarioId)
     {
         var conta = await GetByIdAsync(id, usuarioId);
         if (conta == null) return false;
@@ -46,5 +46,10 @@ public class ContaRepository : IContaRepository
         _context.Contas.Remove(conta);
         await _context.SaveChangesAsync();
         return true;
+    }
+    public async Task<Conta?> GetByIdAndUsuarioAsync(int contaId, string usuarioId)
+    {
+        return await _context.Contas
+            .FirstOrDefaultAsync(c => c.Id == contaId && c.UsuarioId == usuarioId);
     }
 }
