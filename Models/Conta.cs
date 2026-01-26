@@ -12,9 +12,10 @@ namespace finchInteligent.Models
 
         public decimal SaldoInicial { get; set; }
 
-        public int UsuarioId { get; set; }
+        public string UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
 
         public ICollection<Transacao> Transacoes { get; set; } = new List<Transacao>();
+        public decimal Saldo { get; set; }
     }
 }

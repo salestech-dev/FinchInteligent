@@ -1,15 +1,10 @@
+using Microsoft.AspNetCore.Identity;
+
 namespace finchInteligent.Models
 {
-    public class Usuario
+    public class Usuario : IdentityUser
     {
-        public int Id { get; set; }
-
-        public required string Nome { get; set; }
-
-        public required string Email { get; set; }
-
-        public required string SenhaHash { get; set; }
-
+        public string Nome { get; set; }
         public DateTime DataCriacao { get; set; } = DateTime.UtcNow;
     }
 }

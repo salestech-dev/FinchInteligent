@@ -14,7 +14,7 @@ namespace finchInteligent.Models
 
         public string? Descricao { get; set; }
 
-        public int UsuarioId { get; set; }
+        public string UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
 
         public int ContaId { get; set; }

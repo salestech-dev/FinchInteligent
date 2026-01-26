@@ -10,7 +10,7 @@ namespace finchInteligent.Models
 
         public TipoDeCategoria TipoDeCategoria { get; set; }
 
-        public int UsuarioId { get; set; }
+        public string UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
 
         public ICollection<Transacao> Transacoes { get; set; } = new List<Transacao>();

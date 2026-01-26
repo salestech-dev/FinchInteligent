@@ -12,7 +12,7 @@ namespace finchInteligent.Models
         public int CategoriaId { get; set; }
         public Categoria Categoria { get; set; }
 
-        public int UsuarioId { get; set; }
+        public string UsuarioId { get; set; }
         public Usuario Usuario { get; set; }
     }
 }
