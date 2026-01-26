@@ -18,7 +18,7 @@ namespace finchInteligent.Service
             _usuarioRepository = usuarioRepository;
         }
 
-        public async Task<Categoria> CreateCategoriaAsync(Categoria categoria, int usuarioId)
+        public async Task<Categoria> CreateCategoriaAsync(Categoria categoria, string usuarioId)
         {
             var usuarioExists = await _usuarioRepository.ExistsAsync(usuarioId);
             var categoriaExists = await _categoriaRepository.ExistsAsync(categoria.Nome, categoria.TipoDeCategoria, usuarioId);
